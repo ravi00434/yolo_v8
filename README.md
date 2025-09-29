@@ -1,6 +1,5 @@
-YOLOv8 Traffic Cone Detection (MFE-Driverless-V1)
-A Jupyter Notebook workflow for training, exporting, quantizing, and running inference with YOLOv8 to detect traffic cones for the McGill Formula Electric Driverless team.
-
+YOLOv8 Traffic Cone Detection 
+A very basic prototype for training, exporting, quantizing, and running inference with YOLOv8 to detect traffic cones for the self driving cars using Jupyter Notebook workflow 
 Quick Start
 1. Setup
 Clone the repo and install dependencies:
