@@ -1,5 +1,5 @@
-YOLOv8 Traffic Cone Detection 
-A very basic prototype for training, exporting, quantizing, and running inference with YOLOv8 to detect traffic cones for the self driving cars using Jupyter Notebook workflow 
+Traffic Cone Detection using YOLOv8 is 
+a very basic prototype for training, exporting, quantizing, and running inference with YOLOv8 to detect traffic cones for the self driving cars using Jupyter Notebook workflow 
 Quick Start
 1. Setup
 Clone the repo and install dependencies:
