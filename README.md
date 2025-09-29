@@ -1,8 +1,44 @@
-# MFE-Driverless-V1
+YOLOv8 Traffic Cone Detection (MFE-Driverless-V1)
+A Jupyter Notebook workflow for training, exporting, quantizing, and running inference with YOLOv8 to detect traffic cones for the McGill Formula Electric Driverless team.
 
-Welcome to the McGill Formula Electric Driverless Software repository! In this repository you can find all the required packages to boot and operate a Jetson with the MFE car. 
+Quick Start
+1. Setup
+Clone the repo and install dependencies:
 
-This page is still under construction. Stay tuned!
+bash
+pip install ultralytics onnxruntime opencv-python matplotlib
+2. Prepare Your Dataset
+Use YOLO format (images + .txt annotations).
 
-## Cone Detection Pipeline
-See [cone_detection/README.md](cone_detection/README.md) for instructions on training and deploying the YOLOv8 cone detection model.
+Update the data.yaml path in the notebook to point to your dataset.
+
+3. Train the Model
+Open yolov8.ipynb and run the training cell:
+
+python
+!yolo detect train \
+  model=yolov8n.pt \
+  data="/path/to/data.yaml" \
+  epochs=50 \
+  imgsz=640
+Trained models and results are saved in runs/detect/.
+
+4. Export and Inference
+Export to ONNX:
+
+python
+from ultralytics import YOLO
+model = YOLO('runs/detect/your_run/weights/best.pt')
+model.export(format='onnx')
+Quantize (optional, for speed):
+
+python
+from onnxruntime.quantization import quantize_dynamic, QuantType
+quantize_dynamic('best.onnx', 'best_int8.onnx', weight_type=QuantType.QUInt8)
+Run inference and visualize results:
+See notebook cells for details on running ONNX inference and drawing bounding boxes.
+
+Results
+Example mAP50: 0.89 (YOLOv8n, 100 epochs)
+
+See notebook for sample output images.
