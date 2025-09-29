@@ -1,4 +1,4 @@
-raffic Cone Detection using YOLOv8
+Traffic Cone Detection using YOLOv8
 A computer vision system for detecting traffic cones using YOLOv8, designed for autonomous driving applications. This project provides a complete workflow from dataset preparation to model deployment with quantization support.
 
 🚀 Features
