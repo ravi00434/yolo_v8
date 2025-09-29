@@ -6,6 +6,7 @@ Clone the repo and install dependencies:
 
 bash
 pip install ultralytics onnxruntime opencv-python matplotlib
+
 2. Prepare Your Dataset
 Use YOLO format (images + .txt annotations).
 
